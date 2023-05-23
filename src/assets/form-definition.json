@@ -1,0 +1,153 @@
+
+[
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "key": "firstName",
+        "type": "input",
+        "className": "col-6",
+        "templateOptions": {
+          "label": "Nome",
+          "required": true,
+          "pattern": "^[a-zA-Z ]*$",
+          "placeholder": "Inserisci il tuo nome"
+        },
+        "validation": {
+          "messages": {
+            "required": "È necessario inserire il tuo nome",
+            "pattern": "Il nome può contenere solo lettere e spazi"
+          }
+        }
+      },
+      {
+        "key": "lastName",
+        "type": "input",
+        "className": "col-6",
+        "templateOptions": {
+          "label": "Cognome",
+          "required": true,
+          "pattern": "^[a-zA-Z ]*$",
+          "placeholder": "Inserisci il tuo cognome"
+        },
+        "validation": {
+          "messages": {
+            "required": "È necessario inserire il tuo cognome",
+            "pattern": "Il cognome può contenere solo lettere e spazi"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "key": "email",
+        "type": "input",
+        "className": "col-6",
+        "templateOptions": {
+          "type": "email",
+          "label": "Inserisci l'email",
+          "placeholder": "test@test.it",
+          "required": true,
+          "pattern": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+        },
+        "validation": {
+          "messages": {
+            "required": "Inserisci un indirizzo email",
+            "pattern": "Inserisci un indirizzo email valido"
+          }
+        }
+      },
+      {
+        "key": "confirmEmail",
+        "type": "input",
+        "className": "col-6",
+        "templateOptions": {
+          "type": "email",
+          "label": "Conferma l'email",
+          "placeholder": "test@test.it",
+          "required": true,
+          "pattern": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+        },
+        "validation": {
+          "messages": {
+            "required": "Inserisci un indirizzo email",
+            "pattern": "Inserisci un indirizzo email valido",
+            "fieldMatch": "Email inserita non corrisponde"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "key": "image",
+        "type": "file",
+        "className": "col-12",
+        "templateOptions": {
+          "label": "Inserisci un'immagine", 
+          "accept": "image/*"
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "key": "fuelType",
+        "type": "multicheckbox",
+        "className": "col-6",
+        "templateOptions": {
+          "label": "Tipo carburante",
+          "options": [
+            { "id": "petrol", "label": "Benzina" },
+            { "id": "diesel", "label": "Diesel" },
+            { "id": "electric", "label": "Elettrico" },
+            { "id": "hybrid", "label": "Hybrid" }
+          ],
+          "valueProp": "id",
+          "labelProp": "label",
+          "required": true
+        },
+        "validation": {
+          "messages": {
+            "required": "Seleziona almeno un tipo carburante"
+          }
+        }
+      },
+      {
+        "key": "carModel",
+        "type": "select",
+        "templateOptions": {
+          "label": "Car Model",
+          "options": [
+            { "id": "model1", "label": "Model 1" },
+            { "id": "model2", "label": "Model 2" },
+            { "id": "model3", "label": "Model 3" }
+          ],
+          "valueProp": "id",
+          "labelProp": "label",
+          "required": true
+        },
+        "validation": {
+          "messages": {
+            "required": "Seleziona almeno un tipo carburante"
+          }
+        }
+      },
+      {
+        "key": "birthDate",
+        "type": "input",
+        "templateOptions": {
+          "label": "Data di immatricolazione",
+          "type": "date"
+        }
+      }
+    ]
+  }
+]
