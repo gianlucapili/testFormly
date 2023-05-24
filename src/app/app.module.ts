@@ -32,9 +32,6 @@ import { FieldMatchValidator } from './services/custom-validators';
       validators: [
         { name: 'fieldMatch', validation: FieldMatchValidator },
       ],
-      validationMessages: [
-        { name: 'fieldMatch', message: 'Non combacia' },
-      ],
     }),  
     FormlyBootstrapModule,
     HttpClientModule,

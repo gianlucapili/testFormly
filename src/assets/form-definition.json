@@ -41,6 +41,7 @@
   },
   {
     "fieldGroupClassName": "row",
+    "key": "emailGroup",
     "fieldGroup": [
       {
         "key": "email",
@@ -79,7 +80,17 @@
           }
         }
       }
-    ]
+    ],
+    "validators": {
+      "validation": [
+        { 
+          "name": "fieldMatch", 
+          "options": { 
+            "errorPath": "confirmEmail" 
+          }
+        }
+      ]
+    }
   },
   {
     "fieldGroupClassName": "row",

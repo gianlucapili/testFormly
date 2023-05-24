@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 
 @Component({
@@ -12,12 +13,12 @@ export class TestComponent implements OnInit {
 
   form = new FormGroup({ });  
   
-  fields: any = [];
+  fields: FormlyFieldConfig[] = [];
 
   constructor(private formlyJsonschema: FormlyJsonschema, private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<any>('assets/form-definition.json').subscribe((data) => {
+    this.http.get<FormlyFieldConfig[]>('assets/form-definition.json').subscribe(data => {
       this.fields = data;
     });
   }
