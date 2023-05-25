@@ -23,6 +23,10 @@ export class AppComponent {
   },
   {
     name: "hero-job-ad-component",
-    data: { headline: 'Openings in all departments', body: 'Apply today' }
+    data: { headline: 'Openings in all departments', body: 'Apply today', },
+    components: [{
+      name: "hero-button-component",
+      data: { name: 'Go to job site' }
+    }]
   }]
 }

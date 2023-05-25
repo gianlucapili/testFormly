@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentModule } from './component-module/component.module';
 import { HeroJobAdComponent } from './component-module/components/hero-job-ad.component';
 import { HeroProfileComponent } from './component-module/components/hero-profile.component';
+import { HeroButtonComponent } from './component-module/components/hero-button.component';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +19,8 @@ import { HeroProfileComponent } from './component-module/components/hero-profile
     ComponentModule.forRoot({
       componets: [
         HeroJobAdComponent,
-        HeroProfileComponent
+        HeroProfileComponent,
+        HeroButtonComponent
       ]
     })
   ],
