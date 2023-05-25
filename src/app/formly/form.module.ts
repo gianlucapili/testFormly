@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
 import { FormlyBootstrapModule } from "@ngx-formly/bootstrap";
 import { FormlyModule } from "@ngx-formly/core";
-import { TestComponent } from "./test.component";
+import { FormComponent } from "./form.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FormlyFieldFileComponent } from "./fields/formly-field-file.component";
 import { FieldMatchValidator } from "./validators/custom-validators";
-
 
 @NgModule({
   imports: [
@@ -20,8 +19,8 @@ import { FieldMatchValidator } from "./validators/custom-validators";
       ],
     }),  
     FormlyBootstrapModule,
-    TestComponent
+    FormComponent
   ],
-  exports: [TestComponent],
+  exports: [FormComponent],
 })
 export class FormModule { }

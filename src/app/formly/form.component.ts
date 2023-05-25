@@ -4,7 +4,7 @@ import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import formDef from '../form-definition.json'
 
 @Component({
-  selector: 'app-test',
+  selector: 'rlb-form',
   standalone: true,
   imports: [FormlyModule, ReactiveFormsModule],
   template: `
@@ -13,7 +13,7 @@ import formDef from '../form-definition.json'
       <button type="submit" class="btn btn-dark">Submit</button>
     </form>`
 })
-export class TestComponent {
+export class FormComponent {
 
   form = new FormGroup({});
   fields: FormlyFieldConfig[] = formDef as FormlyFieldConfig[];
