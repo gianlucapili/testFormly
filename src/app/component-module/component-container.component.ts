@@ -1,29 +1,35 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ComponentDirective } from './component-module.directive';
-import { ComItem } from './component';
+import { ComponentItem, __InternalComponent__ } from './component';
+import { RegistryService } from './services/registry/registry.service';
+import { HeroJobAdComponent } from './components/hero-job-ad.component';
+import { HeroProfileComponent } from './components/hero-profile.component';
 
 @Component({
-    selector: 'rlb-components-container',
-    template: `
+  selector: 'rlb-components-container',
+  template: `
     <div>
       <ng-template component></ng-template>
     </div>
   `
 })
 export class ComponentsContainerComponent implements OnInit {
-    @Input() components: ComItem[] = [];
+  @Input() components: ComponentItem[] = [];
 
-    @ViewChild(ComponentDirective, { static: true }) component!: ComponentDirective;
+  @ViewChild(ComponentDirective, { static: true }) component!: ComponentDirective;
 
-       ngOnInit(): void {
-        this.loadComponent();
+  constructor(private registryService: RegistryService) { }
+
+  ngOnInit(): void {
+    this.loadComponent();
+  }
+
+  loadComponent() {
+    const viewContainerRef = this.component.viewContainerRef;
+    for (let component of this.components) {
+      const componentType = this.registryService.get(component.name);
+      const componentRef = viewContainerRef.createComponent<__InternalComponent__>(componentType);
+      componentRef.instance.data = component.data;
     }
-
-    loadComponent() {
-        const viewContainerRef = this.component.viewContainerRef;
-        for(let component of this.components) {
-            const componentRef = viewContainerRef.createComponent<ComItem>(component.component);
-            componentRef.instance.data = component.data;
-        }
-    }
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CompData } from '../component';
+import { ComponentData } from '../component';
 
 @Component({
   template: `
@@ -13,6 +13,6 @@ import { CompData } from '../component';
     </div>
   `
 })
-export class HeroProfileComponent implements CompData {
+export class HeroProfileComponent implements ComponentData {
   @Input() data: any;
 }

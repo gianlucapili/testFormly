@@ -3,24 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormModule } from './formly/form.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentDirective } from './component-module/component-module.directive';
-import { HeroProfileComponent } from './component-module/components/hero-profile.component';
+import { ComponentModule } from './component-module/component.module';
 import { HeroJobAdComponent } from './component-module/components/hero-job-ad.component';
-import { ComponentsContainerComponent } from './component-module/component-container.component';
-
+import { HeroProfileComponent } from './component-module/components/hero-profile.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    ComponentsContainerComponent,
-    HeroJobAdComponent,
-    HeroProfileComponent,
-    ComponentDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormModule,
     HttpClientModule,
-
+    FormModule,
+    ComponentModule.forRoot({
+      componets: [
+        HeroJobAdComponent,
+        HeroProfileComponent
+      ]
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

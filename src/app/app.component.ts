@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { HeroProfileComponent } from './component-module/components/hero-profile.component';
-import { HeroJobAdComponent } from './component-module/components/hero-job-ad.component';
-import { ComItem } from './component-module/component';
+import { ComponentItem } from './component-module/component';
 
 @Component({
   selector: 'app-root',
@@ -11,21 +9,20 @@ import { ComItem } from './component-module/component';
 export class AppComponent {
   title = 'test-formly';
 
-  components = [new ComItem(
-    HeroProfileComponent,
-    { name: 'Bombasto', bio: 'Brave as they come' }
-  ),
-  new ComItem(
-    HeroProfileComponent,
-    { name: 'Dr. IQ', bio: 'Smart as they come' }
-  ),
-  new ComItem(
-    HeroJobAdComponent,
-    { headline: 'Hiring for several positions', body: 'Submit your resume today!' }
-  ),
-  new ComItem(
-    HeroJobAdComponent,
-    { headline: 'Openings in all departments', body: 'Apply today' }
-  )
-  ]
+  components: ComponentItem[] = [{
+    name: "hero-profile-component",
+    data: { name: 'Bombasto', bio: 'Brave as they come' }
+  },
+  {
+    name: "hero-profile-component",
+    data: { name: 'Dr. IQ', bio: 'Smart as they come' }
+  },
+  {
+    name: "hero-job-ad-component",
+    data: { headline: 'Hiring for several positions', body: 'Submit your resume today!' }
+  },
+  {
+    name: "hero-job-ad-component",
+    data: { headline: 'Openings in all departments', body: 'Apply today' }
+  }]
 }
