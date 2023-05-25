@@ -1,9 +1,11 @@
-import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, Type, OnInit, ViewChild } from '@angular/core';
 import { ComponentDirective } from './component-module.directive';
-import { ComponentItem, __InternalComponent__ } from './component';
+import { ComponentItem } from './component';
 import { RegistryService } from './services/registry/registry.service';
-import { HeroJobAdComponent } from './components/hero-job-ad.component';
-import { HeroProfileComponent } from './components/hero-profile.component';
+
+class __InternalComponent__ {
+  constructor(public component: Type<any>, public data: any) { }
+}
 
 @Component({
   selector: 'rlb-components-container',

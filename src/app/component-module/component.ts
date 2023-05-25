@@ -1,13 +1,7 @@
-import { Type } from '@angular/core';
-
-export class __InternalComponent__ {
-  constructor(public component: Type<any>, public data: any) { }
-}
-
-export interface ComponentItem extends ComponentData {
+export interface ComponentItem<T = any> extends ComponentData<T> {
   name: string;
 }
 
-export interface ComponentData {
-  data: any;
+export interface ComponentData<T = any> {
+  data: T;
 }
