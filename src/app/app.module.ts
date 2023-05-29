@@ -7,22 +7,38 @@ import { ComponentModule } from './component-module/component.module';
 import { HeroJobAdComponent } from './component-module/components/hero-job-ad.component';
 import { HeroProfileComponent } from './component-module/components/hero-profile.component';
 import { HeroButtonComponent } from './component-module/components/hero-button.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RlbAccordionComponent } from './component-module/components/rlb-accordion.component';
+import { RlbAlertComponent } from './component-module/components/rlb-alert.component';
+import { RlbPaginationComponent } from './component-module/components/rlb-pagination.component';
+import { RlbCollapseComponent } from './component-module/components/rlb-collapse.component';
+import { RlbTooltipComponent } from './component-module/components/rlb-tooltip.component';
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    RlbAccordionComponent,
+    RlbAlertComponent,
+    RlbPaginationComponent,
+    RlbCollapseComponent,
+    RlbTooltipComponent  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormModule,
     ComponentModule.forRoot({
-      componets: [
+      components: [
         HeroJobAdComponent,
         HeroProfileComponent,
-        HeroButtonComponent
+        HeroButtonComponent,
+        RlbAccordionComponent,
+        RlbAlertComponent,
+        RlbPaginationComponent,
+        RlbCollapseComponent,
+        RlbTooltipComponent
       ]
-    })
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
