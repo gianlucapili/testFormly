@@ -5,14 +5,15 @@ import { ComponentDirective } from '../component-module.directive';
 
 @Component({
   template: `
-    <button type="{{data.type ?? 'button'}}" class="btn {{data.style ?? 'btn-primary'}}" 
-            [disabled]="data.disabled ?? false" [autofocus]="data.autofocus ?? false">
+    <ngb-progressbar [value]="data.value" [type]="data.type ?? 'success'" 
+      [striped]="data.striped ?? true" [animated]="data.animated ?? false" 
+      [showValue]="data.showValue ?? false" [height]="data.height">
       {{data.text}}
-    </button>
-    <rlb-components-container [components]="data.innerComponents"></rlb-components-container>
+      <ng-template component></ng-template>
+    </ngb-progressbar>
   `
 })
-export class RlbTooltipComponent extends AbstractComponent implements ComponentData {
+export class RlbProgressBarComponent extends AbstractComponent implements ComponentData {
   @Input() components: ComponentItem[] = [];
   @ViewChild(ComponentDirective, { static: true }) component!: ComponentDirective;
   @Input() data: any;

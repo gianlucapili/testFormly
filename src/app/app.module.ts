@@ -13,15 +13,15 @@ import { RlbAlertComponent } from './component-module/components/rlb-alert.compo
 import { RlbPaginationComponent } from './component-module/components/rlb-pagination.component';
 import { RlbCollapseComponent } from './component-module/components/rlb-collapse.component';
 import { RlbTooltipComponent } from './component-module/components/rlb-tooltip.component';
+import { RlbProgressBarComponent } from './component-module/components/rlb-progress-bar.component';
+import { RlbBadgeComponent } from './component-module/components/rlb-badge.component';
+import { RlbButtonComponent } from './component-module/components/rlb-button.component';
+import { RlbCardComponent } from './component-module/components/rlb-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RlbAccordionComponent,
-    RlbAlertComponent,
-    RlbPaginationComponent,
-    RlbCollapseComponent,
-    RlbTooltipComponent  ],
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -35,7 +35,11 @@ import { RlbTooltipComponent } from './component-module/components/rlb-tooltip.c
         RlbAlertComponent,
         RlbPaginationComponent,
         RlbCollapseComponent,
-        RlbTooltipComponent
+        RlbTooltipComponent,
+        RlbProgressBarComponent,
+        RlbBadgeComponent,
+        RlbButtonComponent,
+        RlbCardComponent
       ]
     }),
     NgbModule
