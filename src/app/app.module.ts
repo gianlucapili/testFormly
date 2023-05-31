@@ -17,15 +17,28 @@ import { RlbProgressBarComponent } from './component-module/components/rlb-progr
 import { RlbBadgeComponent } from './component-module/components/rlb-badge.component';
 import { RlbButtonComponent } from './component-module/components/rlb-button.component';
 import { RlbCardComponent } from './component-module/components/rlb-card.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DynamicRouterModule } from './router-module/dynamic-router.module';
+import { HomeComponent } from './pages/base-pages/home/home.component';
+import { NotFoundComponent } from './pages/base-pages/not-found/not-found.component';
+import { FormlyComponent } from './pages/extra-pages/formly/formly.component';
+import { PageExtraComponent } from './pages/extra-pages/page-extra/page-extra.component';
+
+import routes from './routes.json';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+    FormlyComponent,
+    PageExtraComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormModule,
+    AppRoutingModule,
     ComponentModule.forRoot({
       components: [
         HeroJobAdComponent,
@@ -41,6 +54,17 @@ import { RlbCardComponent } from './component-module/components/rlb-card.compone
         RlbButtonComponent,
         RlbCardComponent
       ]
+    }),
+    DynamicRouterModule.forRoot({
+      pages: [
+        FormlyComponent,
+        PageExtraComponent
+      ],
+      routes,
+      notFound: {
+        stragegy: 'component',
+        component: NotFoundComponent
+      }
     }),
     NgbModule
   ],
