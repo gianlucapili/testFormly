@@ -7,10 +7,8 @@ import { ComponentDirective } from '../component-module.directive';
   template: `
     <button type="{{data.type ?? 'button'}}" class="d-flex btn {{data.style ?? 'btn-primary'}}" 
             [disabled]="data.disabled ?? false" [autofocus]="data.autofocus ?? false">
-      {{data.text}}
-      <div class="ms-1" *ngIf="components && components.length > 0">
-        <ng-template component></ng-template> 
-      </div>
+      {{data.name}}
+      <ng-template component></ng-template>
     </button>
   `
 })

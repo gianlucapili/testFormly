@@ -17,6 +17,8 @@ import { RlbTooltipComponent } from "./components/rlb-tooltip.component";
 import { RlbProgressBarComponent } from "./components/rlb-progress-bar.component";
 import { RlbBadgeComponent } from "./components/rlb-badge.component";
 import { RlbCardComponent } from "./components/rlb-card.component";
+import { RlbCloseButtonComponent } from "./components/rlb-close-button.component";
+import { RlbSpinnerComponent } from "./components/rlb-spinner.component";
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { RlbCardComponent } from "./components/rlb-card.component";
     RlbProgressBarComponent,
     RlbBadgeComponent,
     RlbButtonComponent,
-    RlbCardComponent 
+    RlbCardComponent,
+    RlbCloseButtonComponent,
+    RlbSpinnerComponent
   ],
   imports: [
     CommonModule,

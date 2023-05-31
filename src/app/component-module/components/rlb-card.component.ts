@@ -12,9 +12,6 @@ import { ComponentDirective } from '../component-module.directive';
         <p class="card-text">{{data.text}}</p>
         <ng-template component></ng-template>
       </div>
-      <div class="card-footer" *ngIf="data.footerComponents">
-        <rlb-components-container [components]="data.footerComponents"></rlb-components-container>
-      </div>
     </div>
   `
 })

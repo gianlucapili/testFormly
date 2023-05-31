@@ -16,31 +16,35 @@ export class AppComponent {
       title: 'Card Title', 
       text: 'Some quick example text to build on the card title and make up the bulk of the card content.', 
       image: 'https://via.placeholder.com/150',
-      footerComponents: [
-        {
-          name: "rlb-button-component",
-          data: { text: 'Notification', style: 'btn-primary' },
-          components: [{
-            name: "rlb-badge-component",
-            data: { text: '10', background: 'light' }
-          }]
-        }
-      ]
-    }
+    },
+    components: [{
+      name: "rlb-button-component",
+      data: { name: 'Share' }
+    }]
   },
   {
     name: "rlb-button-component",
     data: { 
-      text: 'Notification', 
-      style: 'btn-success',
+      name: 'Notification', 
+      style: 'btn-success gap-1',
     },
-    components: [
-      {
-        name: "rlb-badge-component",
-        data: { text: '10', background: 'light' }
-      }
-    ]
+    components: [{
+      name: "rlb-badge-component",
+      data: { text: '10', background: 'light', badgePill : true }
+    }]
   },
+  {
+    name: "rlb-spinner-component",
+    data: { 
+      type: 'grow', 
+      color: 'warning', 
+      message: 'Please wait...' 
+    }
+  },
+  // {
+  //   name: "rlb-close-button-component",
+  //   data: { disabled: true }
+  // },
   // {
   //   name: "hero-profile-component",
   //   data: { name: 'Bombasto', bio: 'Brave as they come' }
@@ -100,12 +104,12 @@ export class AppComponent {
   //   name: "rlb-alert-component",
   //   data: { type: 'success', dismissible: true, message: 'This is an alert message.' }
   // },
-  {
-    name: "hero-job-ad-component",
-    data: { headline: 'Openings in all departments', body: 'Apply today', },
-    components: [{
-      name: "hero-button-component",
-      data: { name: 'Go to job site' }
-    }]
-  }]
-}
+  // {
+  //   name: "hero-job-ad-component",
+  //   data: { headline: 'Openings in all departments', body: 'Apply today', },
+  //   components: [{
+  //     name: "hero-button-component",
+  //     data: { name: 'Go to job site' }
+  //   }]
+  // }
+]}
