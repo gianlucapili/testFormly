@@ -7,7 +7,9 @@ import { RlbButtonData } from './rlb-button.data';
 @Component({
   template: `
     <button type="button" class="d-flex btn btn-primary" 
-            [disabled]="data.disabled">
+            [disabled]="data.disabled"
+            [ngbTooltip]="data.tooltip"
+            >
       {{data.text}}
       <ng-template component></ng-template>
     </button>

@@ -37,8 +37,8 @@
     {
         "name": "rlb-alert-component",
         "data": {
-            "message": "This is a alert message.",
-            "style": "alert-primary"
+            "text": "This is a alert message.",
+            "type": "success"
         }
     },
     {
@@ -66,8 +66,9 @@
         }
     },
     {
-        "name": "rlb-tooltip-component",
+        "name": "rlb-button-component",
         "data": {
+            "text": "Tooltip button",
             "button": "Toggle tooltip",
             "tooltip": "This is a tooltip message.",
             "placement": "bottom"
