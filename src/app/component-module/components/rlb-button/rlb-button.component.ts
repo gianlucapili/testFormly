@@ -6,12 +6,12 @@ import { RlbButtonData } from './rlb-button.data';
 
 @Component({
   template: `
-    <button type="button" class="d-flex btn btn-primary" 
-            [disabled]="data.disabled"
-            [ngbTooltip]="data.tooltip"
-            >
+    <button type="button" 
+            class="d-flex btn btn-primary" 
+            [disabled]="data.disabled || data.loading"
+            [ngbTooltip]="data.tooltip">
+      <span *ngIf="data.loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
       {{data.text}}
-      <ng-template component></ng-template>
     </button>
   `
 })
