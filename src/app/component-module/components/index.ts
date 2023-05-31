@@ -9,8 +9,10 @@ export * from './rlb-card/rlb-card.data';
 export * from './rlb-close-button.component';
 export * from './rlb-collapse.component';
 export * from './rlb-pagination.component';
-export * from './rlb-progress-bar.component';
-export * from './rlb-spinner.component';
+export * from './rlb-progress/rlb-progress-bar.component';
+export * from './rlb-progress/rlb-progress-bar.data';
+export * from './rlb-spinner/rlb-spinner.component';
+export * from './rlb-spinner/rlb-spinner.data';
 
 import { RlbAccordionComponent } from './rlb-accordion.component';
 import { RlbAlertComponent } from './rlb-alert/rlb-alert.component';
@@ -20,8 +22,8 @@ import { RlbCardComponent } from './rlb-card/rlb-card.component';
 import { RlbCloseButtonComponent } from './rlb-close-button.component';
 import { RlbCollapseComponent } from './rlb-collapse.component';
 import { RlbPaginationComponent } from './rlb-pagination.component';
-import { RlbProgressBarComponent } from './rlb-progress-bar.component';
-import { RlbSpinnerComponent } from './rlb-spinner.component';
+import { RlbProgressBarComponent } from './rlb-progress/rlb-progress-bar.component';
+import { RlbSpinnerComponent } from './rlb-spinner/rlb-spinner.component';
 
 export const RLB_Components = [
     RlbAccordionComponent,
