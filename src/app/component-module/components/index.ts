@@ -1,7 +1,7 @@
 import { RlbAccordionComponent } from './rlb-accordion.component';
 import { RlbAlertComponent } from './rlb-alert.component';
 import { RlbBadgeComponent } from './rlb-badge.component';
-import { RlbButtonComponent } from './rlb-button.component';
+import { RlbButtonComponent } from './rlb-button/rlb-button.component';
 import { RlbCardComponent } from './rlb-card/rlb-card.component';
 import { RlbCloseButtonComponent } from './rlb-close-button.component';
 import { RlbCollapseComponent } from './rlb-collapse.component';
@@ -13,7 +13,8 @@ import { RlbTooltipComponent } from './rlb-tooltip.component';
 export * from './rlb-accordion.component';
 export * from './rlb-alert.component';
 export * from './rlb-badge.component';
-export * from './rlb-button.component';
+export * from './rlb-button/rlb-button.component';
+export * from './rlb-button/rlb-button.data';
 export * from './rlb-card/rlb-card.component';
 export * from './rlb-card/rlb-card.data';
 export * from './rlb-close-button.component';
