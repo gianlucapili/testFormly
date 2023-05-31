@@ -10,5 +10,5 @@ import { ComponentData, ComponentItem } from '../component';
   `
 })
 export class RlbBadgeComponent implements ComponentData {
-  @Input() data: any;
+  @Input() data!: any;
 }

@@ -9,5 +9,5 @@ import { ComponentData, ComponentItem } from '../component';
   `
 })
 export class RlbSpinnerComponent implements ComponentData {
-  @Input() data: any;
+  @Input() data!: any;
 }

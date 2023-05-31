@@ -7,5 +7,5 @@ import { ComponentData, ComponentItem } from '../component';
   `
 })
 export class RlbCloseButtonComponent implements ComponentData {
-  @Input() data: any;
+  @Input() data!: any;
 }

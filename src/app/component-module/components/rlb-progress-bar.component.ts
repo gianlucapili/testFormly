@@ -14,7 +14,7 @@ import { ComponentDirective } from '../component-module.directive';
   `
 })
 export class RlbProgressBarComponent extends AbstractComponent implements ComponentData {
-  @Input() components: ComponentItem[] = [];
+  @Input() components!: ComponentItem[];
   @ViewChild(ComponentDirective, { static: true }) component!: ComponentDirective;
-  @Input() data: any;
+  @Input() data!: any;
 }
