@@ -1,0 +1,10 @@
+[
+    {
+        "path": "formly",
+        "component": "formly-component"
+    },
+    {
+        "path": "extra-page",
+        "component": "page-extra-component"
+    }
+]
