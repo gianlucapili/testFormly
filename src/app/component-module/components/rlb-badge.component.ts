@@ -1,5 +1,5 @@
-import { Component, Input, ViewChild } from '@angular/core';
-import { ComponentData, ComponentItem } from '../component';
+import { Component, Input } from '@angular/core';
+import { ComponentData } from '../component';
 
 @Component({
   template: `
