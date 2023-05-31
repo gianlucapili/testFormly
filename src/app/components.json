@@ -23,7 +23,16 @@
                     ]
                 }
             ]
-        }
+        },
+        "components": [
+            {
+                "name": "rlb-button-component",
+                "data": {
+                    "text": "Go somewhere",
+                    "style": "btn-primary"
+                }
+            }
+        ]
     },
     {
         "name": "rlb-alert-component",

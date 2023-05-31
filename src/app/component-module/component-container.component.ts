@@ -6,13 +6,9 @@ import { AbstractComponent } from './abstract-component';
 
 @Component({
   selector: 'rlb-components-container',
-  template: `
-    <div>
-      <ng-template component></ng-template>
-    </div>
-  `
+  template: `<ng-template component></ng-template>`
 })
 export class ComponentsContainerComponent extends AbstractComponent {
-  @Input() components: ComponentItem[] = [];
+  @Input() components!: ComponentItem[];
   @ViewChild(ComponentDirective, { static: true }) component!: ComponentDirective;
 }
