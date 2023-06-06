@@ -7,6 +7,6 @@ export interface PagesRegistry {
 @Injectable({
     providedIn: "root"
 })
-export class PagesRegistryOptions implements PagesRegistryOptions {
+export class PagesRegistryOptions implements PagesRegistry {
     public pages?: Type<any>[]
 }

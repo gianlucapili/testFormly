@@ -5,9 +5,7 @@ import { FieldType, FormlyModule } from '@ngx-formly/core';
   selector: 'app-formly-field-file',
   standalone: true,
   imports: [FormlyModule],  
-  template: `
-    <input class="form-control mb-3" type="file" id="formFile" (change)="onFileChange($event)" [formlyAttributes]="field">
-  `,
+  template: `<input class="form-control mb-3" type="file" id="formFile" (change)="onFileChange($event)" [formlyAttributes]="field">`,
 })
 export class FormlyFieldFileComponent extends FieldType {
   onFileChange(event: any) {

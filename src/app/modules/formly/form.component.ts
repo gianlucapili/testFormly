@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
-import formDef from '../form-definition.json'
 
 @Component({
   selector: 'rlb-form',
@@ -15,12 +14,16 @@ import formDef from '../form-definition.json'
 })
 export class FormComponent {
 
-  form = new FormGroup({});
-  fields: FormlyFieldConfig[] = formDef as FormlyFieldConfig[];
+  form: FormGroup;
+
+  @Output() OnSubmit: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
+  @Input() fields!: FormlyFieldConfig[]
+
+  constructor() {
+    this.form = new FormGroup({});
+  }
 
   onSubmit() {
-    if (this.form.valid) {
-      console.log(this.form.value);
-    }
+    this.OnSubmit.emit(this.form);
   }
 }

@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ROUTES } from '@angular/router';
-import { ComponentOptions, DynamicRoutesOptions, FOR_ROOT_OPTIONS_TOKEN, PagesRegistryOptions, provideDynamicRoutesOptions, providePageRegistryOptions } from './configuration';
+import { DynamicRoutesModuleOptions, DynamicRoutesOptions, FOR_ROOT_OPTIONS_TOKEN, PagesRegistryOptions, provideDynamicRoutesOptions, providePageRegistryOptions } from './configuration';
 import { DynamicRoutingService, provideDynamicRoutes } from './services';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { DynamicRoutingService, provideDynamicRoutes } from './services';
   ]
 })
 export class DynamicRouterModule {
-  static forRoot(options?: ComponentOptions): ModuleWithProviders<DynamicRouterModule> {
+  static forRoot(options?: DynamicRoutesModuleOptions): ModuleWithProviders<DynamicRouterModule> {
     return ({
       ngModule: DynamicRouterModule,
       providers: [
