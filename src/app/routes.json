@@ -1,6 +1,6 @@
 [
     {
-        "path": "formly",
+        "path": ["formly", "formly/:id"],
         "component": "formly-component",
         "title": "Formly",
         "subTitle": "Sub Formly",

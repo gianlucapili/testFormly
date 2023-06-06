@@ -14,17 +14,29 @@ export class DynamicRoutingService {
   ) {
   }
 
-  private createRoute(_route: DynamicRouteDefinition): Route {
-    const route: Route = {
-      path: _route.path,
-      component: this.pagesRegistryService.get(_route.component)
-    };
-    return route;
+  private createRoute(_route: DynamicRouteDefinition): Route[] {
+    let path: string[];
+    if (!Array.isArray(_route.path))
+      path = [_route.path];
+    else
+      path = _route.path;
+    return path.map(_path => {
+      const route: Route = {
+        path: _path,
+        component: this.pagesRegistryService.get(_route.component),
+        data: {
+          title: _route.title,
+          subTitle: _route.subTitle,
+          components: _route.components
+        }
+      };
+      return route;
+    });
   }
 
   public get routes(): Route[] {
     if (this.dynamicRoutesOptions.routes && this.dynamicRoutesOptions.routes.length > 0) {
-      const routes: Route[] = this.dynamicRoutesOptions.routes.map(_route => this.createRoute(_route));
+      const routes: Route[] = this.dynamicRoutesOptions.routes.map(_route => this.createRoute(_route)).flat(2);
       if (this.dynamicRoutesOptions.notFound) {
         if (this.dynamicRoutesOptions.notFound.stragegy === 'component') {
           if (!this.dynamicRoutesOptions.notFound.component)

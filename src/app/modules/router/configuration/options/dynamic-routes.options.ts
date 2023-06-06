@@ -1,7 +1,7 @@
 import { Injectable, Type } from '@angular/core';
 
 export interface DynamicRouteDefinition {
-    path: string;
+    path: string[] | string;
     component: string;
     title?: string;
     subTitle?: string;

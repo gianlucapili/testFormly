@@ -12,5 +12,6 @@ export class FormlyComponent extends AbstractPage implements OnInit {
     console.log(this.title);
     console.log(this.subTitle);
     console.log(this.components);
+    console.log(this.params);
   }
 }
