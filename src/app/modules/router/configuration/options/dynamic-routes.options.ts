@@ -1,9 +1,11 @@
 import { Injectable, Type } from '@angular/core';
 
-
 export interface DynamicRouteDefinition {
     path: string;
     component: string;
+    title?: string;
+    subTitle?: string;
+    components?: any[];
 }
 
 export interface NotFoundStrategy {
