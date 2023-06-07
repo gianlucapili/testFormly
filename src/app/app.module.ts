@@ -10,9 +10,12 @@ import { FormlyComponent } from './pages/extra-pages/formly/formly.component';
 import { PageExtraComponent } from './pages/extra-pages/page-extra/page-extra.component';
 import routes from './routes.json';
 import { ComponentModule, DynamicRouterModule, FormModule, RLB_Components } from './modules';
+import { RlbFormComponent } from './components/form.component';
 
 @NgModule({
   declarations: [
+    RlbFormComponent,
+
     AppComponent,
     HomeComponent,
     NotFoundComponent,
@@ -26,7 +29,8 @@ import { ComponentModule, DynamicRouterModule, FormModule, RLB_Components } from
     AppRoutingModule,
     ComponentModule.forRoot({
       components: [
-        ...RLB_Components
+        ...RLB_Components,
+        RlbFormComponent
       ]
     }),
     DynamicRouterModule.forRoot({

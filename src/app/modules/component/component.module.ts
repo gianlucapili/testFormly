@@ -8,7 +8,6 @@ import { ComponentOptions, FOR_ROOT_OPTIONS_TOKEN } from "./options/module.optio
 import { provideRegistryOptions } from "./options/registry.options.provider";
 import { RLB_Components } from "./components";
 
-
 @NgModule({
   declarations: [
     ComponentsContainerComponent,
@@ -20,7 +19,7 @@ import { RLB_Components } from "./components";
     NgbModule
   ],
   exports: [
-    ComponentsContainerComponent,
+    ComponentsContainerComponent
   ],
 })
 export class ComponentModule {

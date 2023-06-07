@@ -1,6 +1,9 @@
 [
     {
-        "path": ["formly", "formly/:id"],
+        "path": [
+            "formly",
+            "formly/:id"
+        ],
         "component": "formly-component",
         "title": "Formly",
         "subTitle": "Sub Formly",
@@ -10,25 +13,7 @@
                 "data": {
                     "title": "Card Title",
                     "text": "Some quick example text to build on the card title and make up the bulk of the card content.",
-                    "image": "https://via.placeholder.com/150",
-                    "footerComponents": [
-                        {
-                            "name": "rlb-button-component",
-                            "data": {
-                                "text": "Notification",
-                                "style": "btn-primary"
-                            },
-                            "components": [
-                                {
-                                    "name": "rlb-badge-component",
-                                    "data": {
-                                        "text": "10",
-                                        "background": "light"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
+                    "image": "https://via.placeholder.com/150"
                 },
                 "components": [
                     {
@@ -46,6 +31,21 @@
                     "text": "This is a alert message.",
                     "type": "success"
                 }
+            },
+            {
+                "name": "rlb-form-component",
+                "data": [
+                    {
+                        "key": "Input",
+                        "type": "input",
+                        "props": {
+                            "label": "Input",
+                            "placeholder": "Placeholder",
+                            "description": "Description",
+                            "required": "true"
+                        }
+                    }
+                ]
             }
         ]
     },
