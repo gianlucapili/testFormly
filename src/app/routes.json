@@ -9,6 +9,7 @@
     "subTitle": "Sub Formly",
     "components": [
       {
+        "$ref": "card1",
         "name": "rlb-card-component",
         "data": {
           "title": "Card Title",

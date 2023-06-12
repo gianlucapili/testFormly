@@ -5,4 +5,5 @@ export interface ComponentItem<T = any> extends ComponentData<T> {
 
 export interface ComponentData<T = any> {
   data: T;
+  $ref?: string;
 }

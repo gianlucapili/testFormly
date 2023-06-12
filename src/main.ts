@@ -1,4 +1,5 @@
 /// <reference types="@angular/localize" />
+import './string-hash'
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
