@@ -7,12 +7,14 @@ import { RegistryOptions } from "./services/registry/registry.options";
 import { ComponentOptions, FOR_ROOT_OPTIONS_TOKEN } from "./options/module.options";
 import { provideRegistryOptions } from "./options/registry.options.provider";
 import { RLB_Components } from "./components";
+import { ScopedPipe } from './pipes/scoped.pipe';
 
 @NgModule({
   declarations: [
     ComponentsContainerComponent,
     ComponentDirective,
-    ...RLB_Components
+    ...RLB_Components,
+    ScopedPipe
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ export class ComponentModule {
           provide: RegistryOptions,
           useFactory: provideRegistryOptions,
           deps: [FOR_ROOT_OPTIONS_TOKEN]
-        }
+        },
+        ...(options?.providers || [])
       ]
     });
   }

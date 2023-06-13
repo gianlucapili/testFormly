@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Scope } from './scope';
-import { Route } from '@angular/router';
+import { default as jsonata } from 'jsonata'
 
 @Injectable({
   providedIn: 'root'
@@ -71,5 +71,9 @@ export class ScopeManagerService {
 
   public destroyScope() {
     delete this.scope.current
+  }
+
+  public query<T = any>(query: string): Promise<T> {
+    return jsonata(query).evaluate(this.scope);
   }
 }

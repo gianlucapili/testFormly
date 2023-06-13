@@ -11,6 +11,8 @@ import { PageExtraComponent } from './pages/extra-pages/page-extra/page-extra.co
 import routes from './routes.json';
 import { ComponentModule, DynamicRouterModule, FormModule, RLB_Components } from './modules';
 import { RlbFormComponent } from './components/form.component';
+import { ComponentTranslateService } from './modules/component/services/translate/translate.service';
+import { TranslateService } from './services/translate/translate.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,11 @@ import { RlbFormComponent } from './components/form.component';
       components: [
         ...RLB_Components,
         RlbFormComponent
-      ]
+      ],
+      providers: [{
+        provide: ComponentTranslateService,
+        useClass: TranslateService
+      }],
     }),
     DynamicRouterModule.forRoot({
       pages: [
@@ -46,7 +52,6 @@ import { RlbFormComponent } from './components/form.component';
     }),
     NgbModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
