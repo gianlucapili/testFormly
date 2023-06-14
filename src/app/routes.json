@@ -7,10 +7,28 @@
     "component": "formly-component",
     "title": "Formly",
     "subTitle": "Sub Formly",
+    "apis": {
+      "data1": {
+        "verb": "get",
+        "method": "https://jsonplaceholder.typicode.com/todos/1",
+        "params": {
+          "id": "$current.routeData.id"
+        }
+      }
+    },
     "components": [
       {
         "$ref": "card1",
         "name": "rlb-card-component",
+        "apis": {
+          "data1": {
+            "verb": "get",
+            "method": "https://jsonplaceholder.typicode.com/todos/{current.routeParams.id}",
+            "params": {
+              "id": "$current.routeData.id"
+            }
+          }
+        },
         "data": {
           "title": "$current.routeData.title",
           "text": "#common.subTitle",

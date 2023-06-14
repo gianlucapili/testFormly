@@ -1,4 +1,5 @@
 import { Injectable, Type } from '@angular/core';
+import { ApiDescriptor } from 'src/app/modules/component/services/apis/apis.interfaces';
 
 export interface DynamicRouteDefinition {
     path: string[] | string;
@@ -6,6 +7,7 @@ export interface DynamicRouteDefinition {
     title?: string;
     subTitle?: string;
     components?: any[];
+    apis?: ApiDescriptor
 }
 
 export interface NotFoundStrategy {

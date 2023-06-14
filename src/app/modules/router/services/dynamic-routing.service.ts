@@ -27,7 +27,8 @@ export class DynamicRoutingService {
         data: {
           title: _route.title,
           subTitle: _route.subTitle,
-          components: _route.components
+          components: _route.components,
+          apis: _route.apis
         }
       };
       return route;

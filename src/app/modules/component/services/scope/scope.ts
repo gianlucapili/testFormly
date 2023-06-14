@@ -1,4 +1,5 @@
 import { Route } from "@angular/router"
+import { ApiContainer } from "../apis/apis.interfaces"
 
 export type ScopeComponent = {
     readonly $ref: string,
@@ -9,10 +10,11 @@ export type ScopeComponent = {
 export interface Scope {
     readonly config: { [k: string]: any }
     readonly global: { [k: string]: any }
-    current?: {
+    current: {
         readonly routeData: any,
         readonly routeParams: any,
         readonly components: ScopeComponent[],
-        readonly $id: string
+        readonly $id: string,
+        readonly $apis: ApiContainer
     }
 }

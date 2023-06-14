@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApisService } from 'src/app/modules/component/services/apis/apis.service';
+import { ScopeManagerService } from 'src/app/modules/component/services/scope/scope-manager.service';
 import { AbstractPage } from 'src/app/modules/router/components/abstract-page';
 
 @Component({
@@ -8,10 +11,15 @@ import { AbstractPage } from 'src/app/modules/router/components/abstract-page';
 })
 export class FormlyComponent extends AbstractPage implements OnInit {
 
-  ngOnInit(): void {
-    console.log(this.title);
-    console.log(this.subTitle);
-    console.log(this.components);
-    console.log(this.params);
+  constructor(route: ActivatedRoute, apisService: ApisService, scopeAccessor: ScopeManagerService) {
+    super(route, apisService, scopeAccessor);
+  }
+
+  override ngOnInit(): void {
+    super.ngOnInit();
+  }
+
+  print() {
+    this.scopeAccessor.printScope();
   }
 }
