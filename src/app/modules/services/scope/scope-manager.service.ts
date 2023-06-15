@@ -3,6 +3,7 @@ import { Scope, ScopeConfig } from './scope';
 import { default as jsonata } from 'jsonata'
 import { ApiContainer } from '../apis/apis.interfaces';
 
+
 @Injectable({
   providedIn: 'root'
 })

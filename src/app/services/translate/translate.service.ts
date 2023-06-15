@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ComponentTranslateService } from 'src/app/modules/component/services/translate/translate.service';
+import { ComponentTranslateService } from 'src/app/modules/services/translate/translate.service';
 
 @Injectable({
   providedIn: 'root'

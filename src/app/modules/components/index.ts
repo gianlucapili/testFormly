@@ -13,6 +13,9 @@ export * from './rlb-progress/rlb-progress-bar.component';
 export * from './rlb-progress/rlb-progress-bar.data';
 export * from './rlb-spinner/rlb-spinner.component';
 export * from './rlb-spinner/rlb-spinner.data';
+export * from './core/abstract-component';
+export * from './core/abstract-page';
+export * from './core/component-container.component';
 
 import { RlbAccordionComponent } from './rlb-accordion.component';
 import { RlbAlertComponent } from './rlb-alert/rlb-alert.component';

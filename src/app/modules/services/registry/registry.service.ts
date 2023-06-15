@@ -1,17 +1,16 @@
 import { Injectable, Type } from '@angular/core';
-import { PagesRegistryOptions } from '../../options/routes/page-registry.options';
-
+import { RegistryOptions } from '../../options';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PagesRegistryService {
+export class RegistryService {
 
   private registry: Map<string, Type<any>> = new Map();
 
-  constructor(options: PagesRegistryOptions) {
-    if (options.pages) {
-      for (const type of options.pages) {
+  constructor(options: RegistryOptions) {
+    if (options.components) {
+      for (const type of options.components) {
         this.add(type);
       }
     }
@@ -19,7 +18,7 @@ export class PagesRegistryService {
 
   get(name: string) {
     const type = this.registry.get(name);
-    if (!type) throw new Error(`Page ${name} not found in registry`);
+    if (!type) throw new Error(`Component ${name} not found in registry`);
     return type;
   }
 

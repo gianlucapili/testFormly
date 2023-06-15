@@ -1,5 +1,4 @@
-import { ModuleOptions } from "../options/dynamic-routes-options";
-import { RegistryOptions } from "../services/registry/registry.options";
+import { ModuleOptions, RegistryOptions } from "../options";
 
 export function provideRegistryOptions(options?: ModuleOptions): RegistryOptions {
     var registryOptions = new RegistryOptions();

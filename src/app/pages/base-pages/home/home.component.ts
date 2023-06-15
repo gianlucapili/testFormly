@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import comp from '../../../components.json'
-import { ComponentItem } from 'src/app/modules/component/component';
+import { ComponentItem } from 'src/app/modules/component';
 
 
 @Component({

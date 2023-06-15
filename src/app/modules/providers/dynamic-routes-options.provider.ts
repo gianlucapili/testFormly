@@ -1,5 +1,5 @@
-import { ModuleOptions } from "../options/dynamic-routes-options";
-import { DynamicRoutesOptions } from "../options/routes/dynamic-routes-options";
+import { DynamicRoutesOptions, ModuleOptions } from "../options";
+
 
 export function provideDynamicRoutesOptions(options?: ModuleOptions): DynamicRoutesOptions {
     const _options = new DynamicRoutesOptions();

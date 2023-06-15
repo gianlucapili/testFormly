@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ScopeManagerService } from '../scope/scope-manager.service';
 import { ApiContainer, ApiDescriptor, ApiEvent } from './apis.interfaces';
 import { BehaviorSubject, Observable, OperatorFunction, catchError, lastValueFrom, map, of, tap } from 'rxjs';
+import { ScopeManagerService } from '..';
 
 @Injectable({
   providedIn: 'root'

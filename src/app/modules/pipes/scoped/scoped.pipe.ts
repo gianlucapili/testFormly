@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ScopeManagerService } from '../services/scope/scope-manager.service';
-import { ComponentTranslateService } from '../services/translate/translate.service';
+import { ComponentTranslateService, ScopeManagerService } from '../../services';
+
 
 @Pipe({
   name: 'scoped'
