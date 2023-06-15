@@ -8,7 +8,7 @@ export type ScopeComponent = {
 }
 
 export interface Scope {
-    readonly config: { [k: string]: any }
+    readonly config: ScopeConfig
     readonly global: { [k: string]: any }
     current: {
         readonly routeData: any,
@@ -18,3 +18,7 @@ export interface Scope {
         readonly $apis: ApiContainer
     }
 }
+
+export interface ScopeConfig {
+    [k: string]: any
+} 

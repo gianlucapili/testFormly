@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { DynamicRoutingService } from './dynamic-routing.service';
+import { DynamicRoutingService } from '../services/routes/dynamic-routing.service';
 
 export function provideDynamicRoutes(dynamicRoutingService: DynamicRoutingService): Route[] {
     return dynamicRoutingService.routes;

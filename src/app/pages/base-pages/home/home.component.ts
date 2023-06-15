@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import comp from '../../../components.json'
-import { ComponentItem } from 'src/app/modules';
+import { ComponentItem } from 'src/app/modules/component/component';
+
 
 @Component({
   selector: 'app-home',

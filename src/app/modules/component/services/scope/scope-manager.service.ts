@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Scope } from './scope';
+import { Scope, ScopeConfig } from './scope';
 import { default as jsonata } from 'jsonata'
 import { ApiContainer } from '../apis/apis.interfaces';
 
@@ -14,23 +14,14 @@ export class ScopeManagerService {
 
   constructor() {
     this.scope = {
-      config: {
-        cfg: "pippo"
-      },
-      global: {
-        glo: "pluto"
-      },
+      config: {},
+      global: {},
       current: this.emptyScope
     }
   }
 
-  public addConfig(prop: string | { [k: string]: any }, data: any) {
-    if (typeof prop === 'string') {
-      Object.assign(this.scope.config, { [prop]: data })
-    }
-    else {
-      Object.assign(this.scope.config, prop)
-    }
+  public addConfig<T = ScopeConfig>(data: T) {
+    Object.assign(this.scope.config, data)
   }
 
   public addGlobal(prop: string | { [k: string]: any }, data: any) {
@@ -51,26 +42,19 @@ export class ScopeManagerService {
   }
 
   public buildScope(id: string, routeData: any, routeParams: any) {
-    if (this.scope.current.$id && this.scope.current?.$id !== id) {
-      this.destroyScope()
-      this.scope.current = {
-        components: [],
-        routeData,
-        routeParams,
-        $id: id,
-        $apis: {}
-      }
+    this.scope.current = {
+      components: [],
+      routeData,
+      routeParams,
+      $id: id,
+      $apis: {}
     }
   }
 
-  public pushComponent(ref: string, data: any) {
+  public pushComponent($ref: string, data: any) {
     if (typeof this.scope.current === 'undefined') return;
-    if (typeof ref === 'undefined') return;
-    this.scope.current.components.push({
-      $ref: ref,
-      data,
-      components: []
-    })
+    if (typeof $ref === 'undefined') return;
+    this.scope.current.components.push({ $ref, data, components: [] })
   }
 
   public destroyScope() {

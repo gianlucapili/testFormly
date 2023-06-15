@@ -1,8 +1,5 @@
 import { Injectable, Type } from '@angular/core';
-
-export interface PagesRegistry {
-    pages?: Type<any>[];
-}
+import { PagesRegistry } from './pages-registry';
 
 @Injectable({
     providedIn: "root"

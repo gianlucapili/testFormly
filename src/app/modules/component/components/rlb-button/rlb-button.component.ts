@@ -1,7 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ComponentData, ComponentItem } from '../../component';
-import { AbstractComponent } from '../../abstract-component';
-import { ComponentDirective } from '../../component-module.directive';
+import { AbstractComponent } from '../core/abstract-component';
+import { ComponentDirective } from '../core/component-module.directive';
 import { RlbButtonData } from './rlb-button.data';
 
 @Component({

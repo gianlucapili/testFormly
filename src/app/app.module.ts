@@ -9,10 +9,12 @@ import { NotFoundComponent } from './pages/base-pages/not-found/not-found.compon
 import { FormlyComponent } from './pages/extra-pages/formly/formly.component';
 import { PageExtraComponent } from './pages/extra-pages/page-extra/page-extra.component';
 import routes from './routes.json';
-import { ComponentModule, DynamicRouterModule, FormModule, RLB_Components } from './modules';
 import { RlbFormComponent } from './components/form.component';
 import { ComponentTranslateService } from './modules/component/services/translate/translate.service';
 import { TranslateService } from './services/translate/translate.service';
+import { ComponentModule } from './modules/component/component.module';
+import { RLB_Components } from './modules/component/components';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,6 @@ import { TranslateService } from './services/translate/translate.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormModule,
     AppRoutingModule,
     ComponentModule.forRoot({
       components: [
@@ -38,8 +39,6 @@ import { TranslateService } from './services/translate/translate.service';
         provide: ComponentTranslateService,
         useClass: TranslateService
       }],
-    }),
-    DynamicRouterModule.forRoot({
       pages: [
         FormlyComponent,
         PageExtraComponent

@@ -1,5 +1,6 @@
 import { Injectable, Type } from '@angular/core';
-import { PagesRegistryOptions } from '../configuration/options/page-registry.options';
+import { PagesRegistryOptions } from '../../options/routes/page-registry.options';
+
 
 @Injectable({
   providedIn: 'root'

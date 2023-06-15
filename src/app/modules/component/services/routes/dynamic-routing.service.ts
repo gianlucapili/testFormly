@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Route } from '@angular/router';
-import { DynamicRouteDefinition, DynamicRoutesOptions } from '../configuration';
 import { PagesRegistryService } from './pages-registry.service';
+import { DynamicRoutesOptions } from '../../options/routes/dynamic-routes-options';
+import { DynamicRouteDefinition } from '../../options/routes/dynamic-route-definition';
 
 @Injectable({
   providedIn: 'root'
