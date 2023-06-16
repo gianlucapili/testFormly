@@ -53,18 +53,22 @@
       },
       {
         "name": "rlb-form-component",
-        "data": [
-          {
-            "key": "Input",
-            "type": "input",
-            "props": {
-              "label": "Input",
-              "placeholder": "Placeholder",
-              "description": "Description",
-              "required": "true"
+        "data": {
+          "color":"primary",
+          "button":"#common.save",
+          "fields": [
+            {
+              "key": "Input",
+              "type": "input",
+              "props": {
+                "label": "Input",
+                "placeholder": "Placeholder",
+                "description": "Description",
+                "required": "true"
+              }
             }
-          }
-        ]
+          ]
+        }
       }
     ]
   },
