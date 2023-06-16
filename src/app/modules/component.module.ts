@@ -9,9 +9,8 @@ import { ScopedPipe } from "./pipes";
 import { DynamicRoutesOptions, FOR_ROOT_OPTIONS_TOKEN, ModuleOptions, PagesRegistryOptions, RegistryOptions } from "./options";
 import { provideDynamicRoutes, provideDynamicRoutesOptions, providePageRegistryOptions, provideRegistryOptions } from "./providers";
 import { DynamicRoutingService } from "./services";
-import { ComponentsContainerComponent, RLB_Components } from "./components";
+import { ComponentsContainerComponent, FieldMatchValidator, FormlyFieldFileComponent, RLB_Components } from "./components";
 import { ComponentDirective } from "./components/core/component-module.directive";
-import { FieldMatchValidator, FormComponent, FormlyFieldFileComponent } from "./components/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { FieldMatchValidator, FormComponent, FormlyFieldFileComponent } from "./
   ],
   imports: [
     CommonModule,
-    FormComponent,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
@@ -37,8 +35,7 @@ import { FieldMatchValidator, FormComponent, FormlyFieldFileComponent } from "./
     FormlyBootstrapModule
   ],
   exports: [
-    ComponentsContainerComponent,
-    FormComponent
+    ComponentsContainerComponent
   ],
 })
 export class ComponentModule {

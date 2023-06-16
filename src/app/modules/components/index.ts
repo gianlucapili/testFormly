@@ -16,7 +16,9 @@ export * from './rlb-spinner/rlb-spinner.data';
 export * from './core/abstract-component';
 export * from './core/abstract-page';
 export * from './core/component-container.component';
+export * from './forms'
 
+import { RlbFormComponent } from './forms';
 import { RlbAccordionComponent } from './rlb-accordion.component';
 import { RlbAlertComponent } from './rlb-alert/rlb-alert.component';
 import { RlbBadgeComponent } from './rlb-badge.component';
@@ -38,5 +40,6 @@ export const RLB_Components = [
     RlbCollapseComponent,
     RlbPaginationComponent,
     RlbProgressBarComponent,
-    RlbSpinnerComponent
+    RlbSpinnerComponent,
+    RlbFormComponent
 ];

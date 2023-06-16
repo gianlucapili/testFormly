@@ -25,7 +25,7 @@
             "verb": "get",
             "method": "https://jsonplaceholder.typicode.com/todos/{current.routeParams.id}",
             "params": {
-              "id": "$current.routeData.id"
+              "q": "$current.routeData.q"
             }
           }
         },
