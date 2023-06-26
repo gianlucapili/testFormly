@@ -20,7 +20,6 @@
   },
   "include": [
     "src/app/modules/options/**/*.ts",
-    "src/app/modules/components/data/*.ts",
   ],
   "exclude": [
     "src/app/modules/options/module-options.ts",

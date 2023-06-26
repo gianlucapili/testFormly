@@ -1,31 +1,34 @@
 {
-  "$ref": "#/definitions/DynamicRouteDefinitionSchema",
+  "$ref": "#/definitions/DynamicRoutesDefinition",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "AllComponents": {
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/ComponentItem%3Cstring%2Cany%3E"
-          },
-          {
-            "$ref": "#/definitions/ComponentItem%3C%22rlb-alert%22%2CRlbAlertData%3E"
-          },
-          {
-            "$ref": "#/definitions/ComponentItem%3C%22rlb-card%22%2CRlbCardData%3E"
-          },
-          {
-            "$ref": "#/definitions/ComponentItem%3C%22rlb-button%22%2CRlbButtonData%3E"
-          },
-          {
-            "$ref": "#/definitions/ComponentItem%3C%22rlb-spinner%22%2CRlbSpinnerData%3E"
-          },
-          {
-            "$ref": "#/definitions/ComponentItem%3C%22rlb-progress%22%2CRlbProgressData%3E"
-          }
-        ]
-      },
-      "type": "array"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-alert-component%22%2CRlbAlertData%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-card-component%22%2CRlbCardData%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-button-component%22%2CRlbButtonData%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-spinner-component%22%2CRlbSpinnerData%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-progress-component%22%2CRlbProgressData%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-form-component%22%2CFormData%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-collapse-component%22%2Cany%3E"
+        },
+        {
+          "$ref": "#/definitions/ComponentItem%3C%22rlb-badge-component%22%2Cany%3E"
+        }
+      ]
     },
     "ApiDescriptor": {
       "additionalProperties": {
@@ -49,7 +52,7 @@
       },
       "type": "object"
     },
-    "ComponentItem<\"rlb-alert\",RlbAlertData>": {
+    "ComponentItem<\"rlb-alert-component\",RlbAlertData>": {
       "additionalProperties": false,
       "properties": {
         "$ref": {
@@ -59,13 +62,16 @@
           "$ref": "#/definitions/ApiDescriptor"
         },
         "components": {
-          "$ref": "#/definitions/AllComponents"
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
         },
         "data": {
           "$ref": "#/definitions/RlbAlertData"
         },
         "name": {
-          "const": "rlb-alert",
+          "const": "rlb-alert-component",
           "type": "string"
         }
       },
@@ -75,7 +81,7 @@
       ],
       "type": "object"
     },
-    "ComponentItem<\"rlb-button\",RlbButtonData>": {
+    "ComponentItem<\"rlb-badge-component\",any>": {
       "additionalProperties": false,
       "properties": {
         "$ref": {
@@ -85,13 +91,43 @@
           "$ref": "#/definitions/ApiDescriptor"
         },
         "components": {
-          "$ref": "#/definitions/AllComponents"
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
+        },
+        "data": {},
+        "name": {
+          "const": "rlb-badge-component",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-button-component\",RlbButtonData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
         },
         "data": {
           "$ref": "#/definitions/RlbButtonData"
         },
         "name": {
-          "const": "rlb-button",
+          "const": "rlb-button-component",
           "type": "string"
         }
       },
@@ -101,7 +137,7 @@
       ],
       "type": "object"
     },
-    "ComponentItem<\"rlb-card\",RlbCardData>": {
+    "ComponentItem<\"rlb-card-component\",RlbCardData>": {
       "additionalProperties": false,
       "properties": {
         "$ref": {
@@ -111,13 +147,16 @@
           "$ref": "#/definitions/ApiDescriptor"
         },
         "components": {
-          "$ref": "#/definitions/AllComponents"
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
         },
         "data": {
           "$ref": "#/definitions/RlbCardData"
         },
         "name": {
-          "const": "rlb-card",
+          "const": "rlb-card-component",
           "type": "string"
         }
       },
@@ -127,7 +166,7 @@
       ],
       "type": "object"
     },
-    "ComponentItem<\"rlb-progress\",RlbProgressData>": {
+    "ComponentItem<\"rlb-collapse-component\",any>": {
       "additionalProperties": false,
       "properties": {
         "$ref": {
@@ -137,13 +176,72 @@
           "$ref": "#/definitions/ApiDescriptor"
         },
         "components": {
-          "$ref": "#/definitions/AllComponents"
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
+        },
+        "data": {},
+        "name": {
+          "const": "rlb-collapse-component",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-form-component\",FormData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
+        },
+        "data": {
+          "$ref": "#/definitions/FormData"
+        },
+        "name": {
+          "const": "rlb-form-component",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-progress-component\",RlbProgressData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
         },
         "data": {
           "$ref": "#/definitions/RlbProgressData"
         },
         "name": {
-          "const": "rlb-progress",
+          "const": "rlb-progress-component",
           "type": "string"
         }
       },
@@ -153,7 +251,7 @@
       ],
       "type": "object"
     },
-    "ComponentItem<\"rlb-spinner\",RlbSpinnerData>": {
+    "ComponentItem<\"rlb-spinner-component\",RlbSpinnerData>": {
       "additionalProperties": false,
       "properties": {
         "$ref": {
@@ -163,36 +261,16 @@
           "$ref": "#/definitions/ApiDescriptor"
         },
         "components": {
-          "$ref": "#/definitions/AllComponents"
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
         },
         "data": {
           "$ref": "#/definitions/RlbSpinnerData"
         },
         "name": {
-          "const": "rlb-spinner",
-          "type": "string"
-        }
-      },
-      "required": [
-        "data",
-        "name"
-      ],
-      "type": "object"
-    },
-    "ComponentItem<string,any>": {
-      "additionalProperties": false,
-      "properties": {
-        "$ref": {
-          "type": "string"
-        },
-        "apis": {
-          "$ref": "#/definitions/ApiDescriptor"
-        },
-        "components": {
-          "$ref": "#/definitions/AllComponents"
-        },
-        "data": {},
-        "name": {
+          "const": "rlb-spinner-component",
           "type": "string"
         }
       },
@@ -212,7 +290,10 @@
           "type": "string"
         },
         "components": {
-          "$ref": "#/definitions/AllComponents"
+          "items": {
+            "$ref": "#/definitions/AllComponents"
+          },
+          "type": "array"
         },
         "path": {
           "anyOf": [
@@ -240,11 +321,142 @@
       ],
       "type": "object"
     },
-    "DynamicRouteDefinitionSchema": {
+    "DynamicRoutesDefinition": {
       "items": {
         "$ref": "#/definitions/DynamicRouteDefinition"
       },
       "type": "array"
+    },
+    "FormData": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "$ref": "#/definitions/FormDataAction"
+        },
+        "button": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "fields": {
+          "items": {},
+          "type": "array"
+        },
+        "onError": {
+          "additionalProperties": false,
+          "properties": {
+            "function": {
+              "type": "string"
+            },
+            "navigate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "navigate"
+          ],
+          "type": "object"
+        },
+        "onSubmit": {
+          "additionalProperties": false,
+          "properties": {
+            "function": {
+              "type": "string"
+            },
+            "navigate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "navigate"
+          ],
+          "type": "object"
+        },
+        "onSuccess": {
+          "additionalProperties": false,
+          "properties": {
+            "function": {
+              "type": "string"
+            },
+            "navigate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "navigate"
+          ],
+          "type": "object"
+        },
+        "onValid": {
+          "additionalProperties": false,
+          "properties": {
+            "function": {
+              "type": "string"
+            },
+            "navigate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "navigate"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "fields",
+        "action",
+        "color",
+        "button"
+      ],
+      "type": "object"
+    },
+    "FormDataAction": {
+      "additionalProperties": false,
+      "properties": {
+        "encode": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "items": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "type": "array"
+              }
+            ]
+          },
+          "type": "object"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "method",
+        "url",
+        "encode"
+      ],
+      "type": "object"
     },
     "RlbAlertData": {
       "additionalProperties": false,
