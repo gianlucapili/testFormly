@@ -3,7 +3,7 @@ import { BusinessFunctionsOptions, DynamicRoutesOptions, ModuleOptions } from ".
 export function provideBusinessFunctionsOptions(options?: ModuleOptions): BusinessFunctionsOptions {
     const _options = new BusinessFunctionsOptions();
     if (options) {
-        _options.functions = options.functions;
+        _options.businessFunctions = options.businessFunctions;
     }
     return (_options);
 }

@@ -13,15 +13,25 @@ export abstract class AbstractRegistryService<T extends Function> {
     return type;
   }
 
-  protected add(type: T) {
-    const name = this.dasherizeName(type);
-    if (!name) return;
-    this.registry.set(name, type);
+  protected add(type: T, name?: string) {
+    let _name;
+    if (name) {
+      _name = this.dasherizeString(name);
+    }
+    else {
+      _name = this.dasherizeName(type);
+    }
+    if (!_name) return;
+    this.registry.set(_name, type);
   }
 
   protected dasherizeName(type: Function) {
     const name: string = type?.prototype?.constructor?.name;
-    if (!name) return;
-    return name.replace(/[A-Z]/g, (char, index) => (index !== 0 ? '-' : '') + char.toLowerCase());
+    return this.dasherizeString(name);
+  };
+
+  protected dasherizeString(val: string) {
+    if (!val) return;
+    return val.replace(/[A-Z]/g, (char, index) => (index !== 0 ? '-' : '') + char.toLowerCase());
   };
 }

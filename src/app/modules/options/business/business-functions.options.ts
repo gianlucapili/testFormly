@@ -4,5 +4,5 @@ import { Injectable, Type } from '@angular/core';
     providedIn: "root"
 })
 export class BusinessFunctionsOptions {
-    public functions?: Function[]
+    public businessFunctions?: { [k: string]: Function }
 }

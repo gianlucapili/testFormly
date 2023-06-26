@@ -1,3 +1,3 @@
 export interface BusinessFunctions {
-    functions?: Function[]
+    businessFunctions?: { [k: string]: Function }
 }

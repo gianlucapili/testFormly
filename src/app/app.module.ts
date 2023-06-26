@@ -43,6 +43,9 @@ import { RLB_Components } from './modules/components';
       notFound: {
         stragegy: 'component',
         component: NotFoundComponent
+      },
+      businessFunctions: {
+        k: (service: AbstractTranslateService) => true
       }
     }),
     NgbModule

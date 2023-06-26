@@ -9,9 +9,9 @@ export class BusinessFunctionsService extends AbstractRegistryService<Function> 
 
   constructor(options: BusinessFunctionsOptions) {
     super();
-    if (options.functions) {
-      for (const type of options.functions) {
-        this.add(type);
+    if (options.businessFunctions) {
+      for (const key of Object.keys(options.businessFunctions)) {
+        this.add(options.businessFunctions[key], key);
       }
     }
   }
