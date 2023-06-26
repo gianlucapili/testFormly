@@ -1,7 +1,6 @@
 export * from './components/components-options';
 export * from './components/registry.options';
 export * from './business/business-functions.options';
-export * from './module-options';
 export * from './routes/dynamic-route-definition';
 export * from './routes/dynamic-route';
 export * from './routes/dynamic-routes-options';

@@ -1,0 +1,69 @@
+{
+  "$ref": "#/definitions/DynamicRouteDefinition",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "ApiDescriptor": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object"
+          },
+          "verb": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "method",
+          "params"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "DynamicRouteDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "component": {
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "not": {}
+          },
+          "type": "array"
+        },
+        "path": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "subTitle": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "component"
+      ],
+      "type": "object"
+    }
+  }
+}
