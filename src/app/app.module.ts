@@ -8,11 +8,11 @@ import { HomeComponent } from './pages/base-pages/home/home.component';
 import { NotFoundComponent } from './pages/base-pages/not-found/not-found.component';
 import { FormlyComponent } from './pages/extra-pages/formly/formly.component';
 import { PageExtraComponent } from './pages/extra-pages/page-extra/page-extra.component';
-import routes from './routes.json';
 import { AbstractTranslateService } from './modules/services/abstract/abstract.translate.service';
 import { TranslateService } from './services/translate/translate.service';
 import { ComponentModule } from './modules/component.module';
 import { RLB_Components } from './modules/components';
+import { routes } from './routes';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { RLB_Components } from './modules/components';
         FormlyComponent,
         PageExtraComponent
       ],
-      routes,
+      routes: routes,
       notFound: {
         stragegy: 'component',
         component: NotFoundComponent

@@ -5,7 +5,7 @@ type __ActNames = Partial<Record<'onSuccess' | 'onError' | 'onSubmit' | 'onValid
 
 interface FormAction {
   navigate: string,
-  function: string,
+  function?: string,
 }
 
 export interface FormData extends __ActNames {
@@ -18,7 +18,7 @@ export interface FormData extends __ActNames {
 export interface FormDataAction {
   method: string,
   url: string,
-  params: { [key: string]: string | number | boolean | readonly (string | number | boolean)[] }
+  params?: { [key: string]: string | number | boolean | readonly (string | number | boolean)[] }
   encode: string
 }
 

@@ -1,7 +1,32 @@
 {
-  "$ref": "#/definitions/DynamicRouteDefinition",
+  "$ref": "#/definitions/DynamicRouteDefinitionSchema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "AllComponents": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/ComponentItem%3Cstring%2Cany%3E"
+          },
+          {
+            "$ref": "#/definitions/ComponentItem%3C%22rlb-alert%22%2CRlbAlertData%3E"
+          },
+          {
+            "$ref": "#/definitions/ComponentItem%3C%22rlb-card%22%2CRlbCardData%3E"
+          },
+          {
+            "$ref": "#/definitions/ComponentItem%3C%22rlb-button%22%2CRlbButtonData%3E"
+          },
+          {
+            "$ref": "#/definitions/ComponentItem%3C%22rlb-spinner%22%2CRlbSpinnerData%3E"
+          },
+          {
+            "$ref": "#/definitions/ComponentItem%3C%22rlb-progress%22%2CRlbProgressData%3E"
+          }
+        ]
+      },
+      "type": "array"
+    },
     "ApiDescriptor": {
       "additionalProperties": {
         "additionalProperties": false,
@@ -24,6 +49,159 @@
       },
       "type": "object"
     },
+    "ComponentItem<\"rlb-alert\",RlbAlertData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "$ref": "#/definitions/AllComponents"
+        },
+        "data": {
+          "$ref": "#/definitions/RlbAlertData"
+        },
+        "name": {
+          "const": "rlb-alert",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-button\",RlbButtonData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "$ref": "#/definitions/AllComponents"
+        },
+        "data": {
+          "$ref": "#/definitions/RlbButtonData"
+        },
+        "name": {
+          "const": "rlb-button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-card\",RlbCardData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "$ref": "#/definitions/AllComponents"
+        },
+        "data": {
+          "$ref": "#/definitions/RlbCardData"
+        },
+        "name": {
+          "const": "rlb-card",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-progress\",RlbProgressData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "$ref": "#/definitions/AllComponents"
+        },
+        "data": {
+          "$ref": "#/definitions/RlbProgressData"
+        },
+        "name": {
+          "const": "rlb-progress",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<\"rlb-spinner\",RlbSpinnerData>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "$ref": "#/definitions/AllComponents"
+        },
+        "data": {
+          "$ref": "#/definitions/RlbSpinnerData"
+        },
+        "name": {
+          "const": "rlb-spinner",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
+    "ComponentItem<string,any>": {
+      "additionalProperties": false,
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "apis": {
+          "$ref": "#/definitions/ApiDescriptor"
+        },
+        "components": {
+          "$ref": "#/definitions/AllComponents"
+        },
+        "data": {},
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "name"
+      ],
+      "type": "object"
+    },
     "DynamicRouteDefinition": {
       "additionalProperties": false,
       "properties": {
@@ -34,10 +212,7 @@
           "type": "string"
         },
         "components": {
-          "items": {
-            "not": {}
-          },
-          "type": "array"
+          "$ref": "#/definitions/AllComponents"
         },
         "path": {
           "anyOf": [
@@ -62,6 +237,139 @@
       "required": [
         "path",
         "component"
+      ],
+      "type": "object"
+    },
+    "DynamicRouteDefinitionSchema": {
+      "items": {
+        "$ref": "#/definitions/DynamicRouteDefinition"
+      },
+      "type": "array"
+    },
+    "RlbAlertData": {
+      "additionalProperties": false,
+      "properties": {
+        "dismissible": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "success",
+            "info",
+            "warning",
+            "danger",
+            "primary",
+            "secondary",
+            "light",
+            "dark"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "dismissible",
+        "type"
+      ],
+      "type": "object"
+    },
+    "RlbButtonData": {
+      "additionalProperties": false,
+      "properties": {
+        "disabled": {
+          "type": "boolean"
+        },
+        "loading": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string"
+        },
+        "tooltip": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RlbCardData": {
+      "additionalProperties": false,
+      "properties": {
+        "alt": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RlbProgressData": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "success",
+            "info",
+            "warning",
+            "danger",
+            "primary",
+            "secondary",
+            "dark"
+          ],
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "type",
+        "text"
+      ],
+      "type": "object"
+    },
+    "RlbSpinnerData": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "enum": [
+            "boder",
+            "grow"
+          ],
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "success",
+            "info",
+            "warning",
+            "danger",
+            "primary",
+            "secondary",
+            "dark"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "format",
+        "type",
+        "text"
       ],
       "type": "object"
     }

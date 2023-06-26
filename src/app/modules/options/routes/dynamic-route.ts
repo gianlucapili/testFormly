@@ -1,7 +1,7 @@
-import { DynamicRouteDefinition } from "./dynamic-route-definition";
+import { DynamicRoutesDefinition } from "./dynamic-route-definition";
 import { NotFoundStrategy } from "./not-found-strategy";
 
 export interface DynamicRoute {
-    routes?: DynamicRouteDefinition[];
+    routes?: DynamicRoutesDefinition;
     notFound?: NotFoundStrategy;
 }

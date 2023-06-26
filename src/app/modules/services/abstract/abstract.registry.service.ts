@@ -7,7 +7,8 @@ export abstract class AbstractRegistryService<T extends Function> {
 
   protected registry: Map<string, T> = new Map();
 
-  public get(name: string) {
+  public get(name: string | null | undefined) {
+    if (!name) return;
     const type = this.registry.get(name);
     if (!type) throw new Error(`Component ${name} not found in registry`);
     return type;

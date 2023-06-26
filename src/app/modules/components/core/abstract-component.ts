@@ -19,7 +19,6 @@ export abstract class AbstractComponent implements OnInit {
 	constructor(
 		private registryService: RegistryService,
 		private scopeAccessor: ScopeManagerService,
-		private route: ActivatedRoute,
 		private apisService: ApisService
 	) { }
 
@@ -38,10 +37,12 @@ export abstract class AbstractComponent implements OnInit {
 				}
 				this.scopeAccessor.pushComponent(component.$ref, component.data)
 			}
-			const componentType = this.registryService.get(component.name);
-			const componentRef = this.component.viewContainerRef.createComponent<__InternalComponent__>(componentType);
-			componentRef.instance.data = component.data;
-			componentRef.instance.components = component.components || [];
+			if (component.name) {
+				const componentType = this.registryService.get(component.name) as Type<any>;
+				const componentRef = this.component.viewContainerRef.createComponent<__InternalComponent__>(componentType);
+				componentRef.instance.data = component.data;
+				componentRef.instance.components = component.components || [];
+			}
 		}
 	}
 }

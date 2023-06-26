@@ -1,0 +1,11 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/*.routes.json"
+      ],
+      "url": "./schemas/routes.schema.json"
+    }
+  ],
+  "editor.tabSize": 2
+}

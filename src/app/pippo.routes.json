@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/pages/index/index",
+    "title": "Pippo",
+    "subTitle": "eeee",
+    "component": "rlb-page",
+    "apis": {
+      "apiPippo": {
+        "verb": "get",
+        "method": "${env.endpoint}/todos/1",
+        "params": {
+          "id": "$current.routeData.id"
+        }
+      }
+    },
+    "components": [
+      {
+        "name": "rlb-alert",
+        "apis": {
+          "ffew":{
+            "method": "",
+            "params": {},
+            "verb": ""
+          }
+        },
+        "data": {
+          
+        }
+      }
+    ]
+  }
+]
