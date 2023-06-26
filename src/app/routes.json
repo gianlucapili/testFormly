@@ -10,7 +10,7 @@
     "apis": {
       "data1": {
         "verb": "get",
-        "method": "https://jsonplaceholder.typicode.com/todos/1",
+        "method": "${env.endpoint}/todos/1",
         "params": {
           "id": "$current.routeData.id"
         }
@@ -23,7 +23,7 @@
         "apis": {
           "data1": {
             "verb": "get",
-            "method": "https://jsonplaceholder.typicode.com/todos/{current.routeParams.id}",
+            "method": "${env.endpoint}/todos/${current.routeParams.id}",
             "params": {
               "q": "$current.routeData.q"
             }
@@ -54,8 +54,21 @@
       {
         "name": "rlb-form-component",
         "data": {
-          "color":"primary",
-          "button":"#common.save",
+          "color": "primary",
+          "button": "#common.save",
+          "action": {
+            "method": "post",
+            "url": "${env.endpoint}/posts",
+            "encode": "json",
+            "params": {
+              "title": "$current.formData.title",
+              "body": "$current.formData.body",
+              "userId": 1
+            },
+            "onSuccess": {
+              "navigate": "/formly/${resp.id}"
+            }
+          },
           "fields": [
             {
               "key": "Input",

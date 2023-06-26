@@ -9,7 +9,7 @@ import { NotFoundComponent } from './pages/base-pages/not-found/not-found.compon
 import { FormlyComponent } from './pages/extra-pages/formly/formly.component';
 import { PageExtraComponent } from './pages/extra-pages/page-extra/page-extra.component';
 import routes from './routes.json';
-import { ComponentTranslateService } from './modules/services/translate/translate.service';
+import { AbstractTranslateService } from './modules/services/abstract/abstract.translate.service';
 import { TranslateService } from './services/translate/translate.service';
 import { ComponentModule } from './modules/component.module';
 import { RLB_Components } from './modules/components';
@@ -32,7 +32,7 @@ import { RLB_Components } from './modules/components';
         ...RLB_Components
       ],
       providers: [{
-        provide: ComponentTranslateService,
+        provide: AbstractTranslateService,
         useClass: TranslateService
       }],
       pages: [

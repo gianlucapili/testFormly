@@ -9,7 +9,7 @@ export type ScopeComponent = {
 
 export interface Scope {
     readonly config: ScopeConfig
-    readonly global: { [k: string]: any }
+    readonly env: { [k: string]: any }
     current: {
         readonly routeData: any,
         readonly routeParams: any,

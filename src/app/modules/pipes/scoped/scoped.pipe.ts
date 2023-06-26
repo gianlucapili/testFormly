@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ComponentTranslateService, ScopeManagerService } from '../../services';
+import { AbstractTranslateService, ScopeManagerService } from '../../services';
 
 
 @Pipe({
@@ -9,7 +9,7 @@ export class ScopedPipe implements PipeTransform {
 
   constructor(
     private scopeManager: ScopeManagerService,
-    private componentTranslateService: ComponentTranslateService
+    private componentTranslateService: AbstractTranslateService
   ) { }
 
   transform(query: string | null | undefined, ...args: unknown[]): Promise<any> {
