@@ -2,24 +2,27 @@ import { ComponentItem } from "../../component";
 import { ComponentDirective } from "./component-module.directive";
 import { Type, OnInit, Injectable } from '@angular/core';
 import { RegistryService } from '../../services/registry/registry.service';
-import { ActivatedRoute } from "@angular/router";
 import { ScopeManagerService } from "../../services/scope/scope-manager.service";
 import { ApisService } from "../../services/apis/apis.service";
 
 class __InternalComponent__ {
-	constructor(public component: Type<any>, public data: any) { }
+	constructor(public component: Type<any>) { }
+	public data: any
 	public components?: ComponentItem[] = [];
+	public $ref!: string | undefined;
 }
 
 @Injectable()
 export abstract class AbstractComponent implements OnInit {
 	abstract components: ComponentItem[]
 	abstract component: ComponentDirective;
+	public $ref!: string;
 
 	constructor(
-		private registryService: RegistryService,
-		private scopeAccessor: ScopeManagerService,
-		private apisService: ApisService
+		protected registryService: RegistryService,
+		protected scopeAccessor: ScopeManagerService,
+		protected apisService: ApisService
+
 	) { }
 
 	ngOnInit(): void {
@@ -42,6 +45,7 @@ export abstract class AbstractComponent implements OnInit {
 				const componentRef = this.component.viewContainerRef.createComponent<__InternalComponent__>(componentType);
 				componentRef.instance.data = component.data;
 				componentRef.instance.components = component.components || [];
+				componentRef.instance.$ref = component.$ref;
 			}
 		}
 	}

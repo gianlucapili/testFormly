@@ -1,6 +1,6 @@
 import { Component, Input, Type, OnInit, ViewChild } from '@angular/core';
 import { ComponentDirective } from './component-module.directive';
-import { AbstractComponent } from './abstract-component';
+import { AbstractComponent } from './abstract.component';
 import { ComponentItem } from '../../component';
 
 

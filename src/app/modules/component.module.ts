@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FormlyModule } from "@ngx-formly/core";
 import { FormlyBootstrapModule } from "@ngx-formly/bootstrap";
-import { ROUTES } from "@angular/router";
+import { ROUTES, RouterModule } from "@angular/router";
 import { ScopedPipe } from "./pipes";
 import { BusinessFunctionsOptions, DynamicRoutesOptions, FOR_ROOT_OPTIONS_TOKEN, ModuleOptions, PagesRegistryOptions, RegistryOptions } from "./options";
 import { provideBusinessFunctionsOptions, provideDynamicRoutes, provideDynamicRoutesOptions, providePageRegistryOptions, provideRegistryOptions } from "./providers";
@@ -34,7 +34,8 @@ import { ComponentDirective } from "./components/core/component-module.directive
         { name: 'fieldMatch', validation: FieldMatchValidator },
       ],
     }),
-    FormlyBootstrapModule
+    FormlyBootstrapModule,
+    RouterModule
   ],
   exports: [
     CommonModule,

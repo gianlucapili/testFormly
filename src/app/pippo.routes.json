@@ -15,16 +15,18 @@
     },
     "components": [
       {
-        "name": "rlb-alert",
+        "name": "rlb-alert-component",
         "apis": {
-          "ffew":{
+          "ffew": {
             "method": "",
             "params": {},
             "verb": ""
           }
         },
         "data": {
-          
+          "dismissible": false,
+          "type": "danger",
+          "text": "fefe"
         }
       }
     ]

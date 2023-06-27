@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ComponentData, ComponentItem } from '../../component';
-import { AbstractComponent } from '../core/abstract-component';
+import { AbstractComponent } from '../core/abstract.component';
 import { RlbProgressData } from './rlb-progress-bar.data';
 import { ComponentDirective } from '../core/component-module.directive';
 

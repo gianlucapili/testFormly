@@ -1,22 +1,33 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ComponentData, ComponentItem } from '../../component';
-import { AbstractComponent } from '../core/abstract-component';
 import { ComponentDirective } from '../core/component-module.directive';
 import { RlbButtonData } from './rlb-button.data';
+import { AbstractActionComponent } from '../core/abstract-action.component';
 
 @Component({
   template: `
-    <button type="button" 
-            class="d-flex btn btn-primary" 
-            [disabled]="data.disabled || data.loading"
-            [ngbTooltip]="data.tooltip">
-      <span *ngIf="data.loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-      {{data.text}}
-    </button>
+    <ng-container *ngIf="isUrl; else button">
+      <button type="button" class="btn btn-primary" 
+              [disabled]="data.disabled"
+              [ngbTooltip]="data.tooltip"
+              [routerLink]="navigationData.path | async" [queryParams]="navigationData.qParams |async">
+        {{data.text}}
+      </button>
+    </ng-container>
+    <ng-template #button>
+      <button type="button" 
+              class="btn btn-primary" 
+              [disabled]="data.disabled || loading"
+              [ngbTooltip]="data.tooltip"
+              (click)="execute($event)">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        {{data.text}}
+      </button>
+    </ng-template>
   `
 })
-export class RlbButtonComponent extends AbstractComponent implements ComponentData<RlbButtonData> {
+export class RlbButtonComponent extends AbstractActionComponent implements ComponentData<RlbButtonData> {
   @Input() components!: ComponentItem[];
   @ViewChild(ComponentDirective, { static: true }) component!: ComponentDirective;
-  @Input() data!: RlbButtonData;
+  @Input() override data!: RlbButtonData;
 }
